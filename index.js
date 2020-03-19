@@ -47,7 +47,7 @@ class Person {
     this.stomach = [];
   }
   eat(someFood) {
-    this.stomach.push(someFood);
+    
     if(this.stomach.length < 10) {
       this.stomach.push(someFood);
     } else {
@@ -87,11 +87,17 @@ class Car {
     this.tank += gallons;
   }
   drive(distance) {
-    this.odometer += distance;
-    this.tank -= distance / this.milesPerGallon;
-    if(this.tank == 0) {
-      return `I ran out of fuel at ${this.odometer} miles!`;
+    const maxDistance = this.tank * this.milesPerGallon;
+
+    if(distance <= maxDistance) {
+      this.odometer += distance;
+      this.tank -= distance / this.milesPerGallon;
+    } else {
+      this.odometer = maxDistance;
+      this.tank == 0;
+        return `I ran out of fuel at ${this.odometer} miles!`;
     }
+    
   }
 }
 
