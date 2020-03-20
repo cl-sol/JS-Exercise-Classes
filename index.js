@@ -141,7 +141,7 @@ class Lambdasian {
 */
 class Instructor extends Lambdasian {
   constructor(instructor) {
-    super(instructor)
+    super(instructor);
       this.specialty = instructor.specialty;
       this.favLanguage = instructor.favLanguage;
       this.catchPhrase = instructor.catchPhrase;
@@ -171,7 +171,7 @@ class Instructor extends Lambdasian {
 */
 class Student extends Lambdasian {
   constructor(student) {
-    super(student)
+    super(student);
     this.previousBackground = student.previousBackground;
     this.className = student.className;
     this.favSubjects = student.favSubjects;
@@ -180,7 +180,10 @@ class Student extends Lambdasian {
     return `Loving ${this.favSubjects[0]}, ${this.favSubjects[1]}, ${this.favSubjects[2]}!`;
   }
   PRAssignment(subject) {
-    return `${this.name} has begun sprint challenge on${subject}`;
+    return `${this.name} has submitted a PR for ${subject}`;
+  }
+  sprintChallenge(subject) {
+    return `${this.name} has begun sprint challenge on ${subject}`
   }
 }
 
@@ -199,11 +202,11 @@ class Student extends Lambdasian {
 */
 class ProjectManager extends Instructor {
   constructor(pm) {
-    super(pm)
+    super(pm);
     this.gradClassName = pm.gradClassName;
     this.favInstructor = pm.favInstructor;
   }
-  standup(channel) {
+  standUp(channel) {
     return `${this.name} announces to ${channel}, @channel standy times!`;
   }
   debugsCode(student, subject) {
