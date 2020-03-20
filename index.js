@@ -94,11 +94,14 @@ class Car {
     } else {
       const maxDistance = this.tank * this.milesPerGallon;
 
+      this.tank = 0;
       this.odometer +=maxDistance;
-    } 
-    if(this.tank ==0) {
       return `I ran out of fuel at ${this.odometer} miles!`;
-    }
+    } 
+    //if(this.tank < gasAvailable) {
+      
+      
+    //}
   }
 }
 
